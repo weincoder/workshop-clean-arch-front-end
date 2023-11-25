@@ -8,6 +8,7 @@ import { CircularProgressIndicatorComponent } from './UI/common/circular-progres
 import { AlbumApiService } from './infraestructure/driven-adapter/album-api/album-api.service';
 import { AlbumGateway } from './domain/models/Album/gateway/album-gateway';
 import { HttpClientModule } from '@angular/common/http';
+import { AlbumApiServiceWithoutDelay } from './infraestructure/driven-adapter/album-api/album-api-withou-delay.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     provideClientHydration(),
-    { provide: AlbumGateway, useClass: AlbumApiService },
+    { provide: AlbumGateway, useClass: AlbumApiServiceWithoutDelay },
   ],
   bootstrap: [AppComponent]
 })

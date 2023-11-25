@@ -11,6 +11,7 @@ class PokemonApiDiferente extends PokeGateway{
     Uri url = Uri.parse('https://pokeapi.co/api/v2/pokemon/?offset=120&limit=20');
     final response = await http.get(url);
     if(response.statusCode == 200 ){
+      print('todo anda super bien');
       final pokemon = pokemonFromJson(response.body);
       final pokemonDetails = pokemon.pokeDetails;
       return pokemonDetails;

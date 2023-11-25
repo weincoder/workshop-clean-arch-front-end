@@ -15,7 +15,7 @@ export class AlbumCardComponent implements OnInit {
   response$: Observable<Album> | undefined;
   datos: any;
   ngOnInit(): void {
-    this.response$ = this._getAlbumUseCase.getAlbumById('12');
+    this.response$ = this._getAlbumUseCase.getAlbumById('15');
     this.response$.subscribe(
       (data: any) => {
         this.datos = data;
